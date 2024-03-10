@@ -1,0 +1,29 @@
+GameName = "🚀 Click for UGC" 
+
+tab1name = "Main" 
+
+local Library = loadstring(game:HttpGet("https://raw.githubusercontent.com/bloodball/-back-ups-for-libs/main/wizard"))() 
+
+local GameName = Library:NewWindow(GameName) 
+
+local Tab1 = GameName:NewSection(tab1name) 
+
+Tab1:CreateToggle("Auto Click", function(value)
+_G.name = value
+while _G.name == true do
+_G.Loop = true
+while _G.Loop and task.wait() do
+game:GetService("ReplicatedStorage").CoreRemotes.ClickRemote:FireServer()
+end
+wait(5) 
+end
+end) 
+
+Tab1:CreateButton("Free 10k", function(value)
+game:GetService("ReplicatedStorage").ChestRemotes.Claim:InvokeServer()
+end) 
+
+Tab1:CreateButton("Anti Afk", function(value)
+loadstring(game:HttpGet("https://raw.githubusercontent.com/KazeOnTop/Rice-Anti-Afk/main/Wind", true))()
+end)
+local Tab2 = GameName:NewSection("justrinn")
